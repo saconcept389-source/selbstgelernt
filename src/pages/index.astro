@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArtikelKarte from '../components/ArtikelKarte.astro';
+import { getArtikel } from '../lib/artikel';
+
+const artikel = await getArtikel();
+---
+
+<BaseLayout
+  title="IT-Skills lernen mit klarem Plan"
+  description="Ehrliche Kursvergleiche und Schritt-für-Schritt-Lernpfade für SQL, Python, Data Analytics & Co. — getestet von einem Wirtschaftsinformatik-Studenten."
+>
+  <section class="hero">
+    <h1>IT-Skills lernen — mit klarem Plan statt Kurs-Chaos.</h1>
+    <p>
+      Tausende Onlinekurse versprechen dir Programmieren, Data Analytics und IT-Zertifikate.
+      Hier findest du ehrliche Vergleiche und Schritt-für-Schritt-Lernpfade —
+      geschrieben von jemandem, der die Kurse im Studium selbst durcharbeitet.
+    </p>
+  </section>
+
+  <section>
+    <h2>Neueste Artikel</h2>
+    {artikel.length > 0 ? (
+      <ul class="card-list">
+        {artikel.map((a) => <ArtikelKarte artikel={a} />)}
+      </ul>
+    ) : (
+      <p class="meta">Die ersten Artikel erscheinen in Kürze.</p>
+    )}
+  </section>
+</BaseLayout>

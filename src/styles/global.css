@@ -1,0 +1,188 @@
+/* selbstgelernt.de — Design-System
+   Bewusst ohne Webfonts und externe Ressourcen: schnell, DSGVO-einfach, kein Cookie-Banner. */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f6f8fa;
+  --text: #1c2430;
+  --text-muted: #5b6675;
+  --accent: #0e7a5f;
+  --accent-dark: #0a5c48;
+  --border: #e3e8ee;
+  --radius: 10px;
+  --max-width: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body { margin: 0; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+.wordmark {
+  font-weight: 750;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.wordmark svg { color: var(--accent); }
+.site-nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.site-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent-dark); }
+
+/* ---------- Typografie & Links ---------- */
+main { padding: 2.5rem 0 4rem; }
+h1 { font-size: 2rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 0.75rem; }
+h2 { font-size: 1.45rem; line-height: 1.3; margin: 2.2rem 0 0.6rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.15rem; margin: 1.8rem 0 0.4rem; }
+p, ul, ol { margin: 0 0 1.1rem; }
+li { margin-bottom: 0.35rem; }
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
+blockquote {
+  margin: 1.4rem 0;
+  padding: 0.2rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-alt);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--text-muted);
+}
+table { border-collapse: collapse; width: 100%; margin: 1.4rem 0; font-size: 0.95rem; }
+th, td { border: 1px solid var(--border); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+th { background: var(--bg-alt); }
+code {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+}
+
+.lead { font-size: 1.12rem; color: var(--text-muted); }
+.meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+/* Sternchen-Marker an Werbelinks */
+.aff-mark { color: var(--accent); font-weight: 600; text-decoration: none; }
+
+/* ---------- Boxen ---------- */
+.hinweis-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+}
+.entwurf-badge {
+  display: inline-block;
+  background: #b45309;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.autor-box {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  margin-top: 3rem;
+  background: var(--bg-alt);
+  font-size: 0.95rem;
+}
+.autor-box strong { display: block; margin-bottom: 0.2rem; }
+
+/* ---------- Artikel-Karten ---------- */
+.card-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.35rem;
+  transition: border-color 0.15s ease;
+}
+.card:hover { border-color: var(--accent); }
+.card a.card-title {
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.card a.card-title:hover { color: var(--accent-dark); }
+.card p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+.kategorie-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: #e7f4f0;
+  border-radius: 999px;
+  padding: 0.12rem 0.65rem;
+  margin-bottom: 0.55rem;
+}
+
+/* ---------- Hero ---------- */
+.hero { padding: 1.5rem 0 2.5rem; }
+.hero h1 { font-size: 2.3rem; }
+.hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 38rem; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding: 1.6rem 0 2rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.site-footer nav { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+.site-footer a { color: var(--text-muted); }
+.site-footer p { margin: 0.3rem 0 0; }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero h1 { font-size: 1.8rem; }
+}

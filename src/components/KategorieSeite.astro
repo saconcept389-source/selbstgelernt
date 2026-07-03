@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArtikelKarte from './ArtikelKarte.astro';
+import { getArtikel } from '../lib/artikel';
+
+interface Props {
+  kategorie: 'lernpfad' | 'kursvergleich' | 'ratgeber';
+  title: string;
+  description: string;
+  intro: string;
+}
+
+const { kategorie, title, description, intro } = Astro.props;
+const artikel = await getArtikel(kategorie);
+---
+
+<BaseLayout title={title} description={description}>
+  <h1>{title}</h1>
+  <p class="lead">{intro}</p>
+  {artikel.length > 0 ? (
+    <ul class="card-list">
+      {artikel.map((a) => <ArtikelKarte artikel={a} />)}
+    </ul>
+  ) : (
+    <p class="meta">Hier erscheinen in Kürze die ersten Artikel.</p>
+  )}
+</BaseLayout>

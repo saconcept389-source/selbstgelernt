@@ -1,0 +1,27 @@
+---
+const nav = [
+  { href: '/lernpfade', label: 'Lernpfade' },
+  { href: '/kursvergleiche', label: 'Kursvergleiche' },
+  { href: '/ratgeber', label: 'Ratgeber' },
+  { href: '/ueber', label: 'Über' },
+];
+const current = Astro.url.pathname.replace(/\/$/, '');
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="wordmark" aria-label="selbstgelernt.de – Startseite">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 19c4-1 3-6 7-7s3-6 7-7" />
+        <circle cx="4" cy="19" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="18" cy="5" r="1.6" fill="currentColor" stroke="none" />
+      </svg>
+      selbstgelernt.de
+    </a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      {nav.map((item) => (
+        <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

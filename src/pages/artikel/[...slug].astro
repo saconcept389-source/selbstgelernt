@@ -1,0 +1,46 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getArtikel } from '../../lib/artikel';
+
+export async function getStaticPaths() {
+  const artikel = await getArtikel();
+  return artikel.map((a) => ({ params: { slug: a.id }, props: { artikel: a } }));
+}
+
+const { artikel } = Astro.props;
+const { Content } = await render(artikel);
+const datum = (d: Date) =>
+  d.toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout title={artikel.data.title} description={artikel.data.description} article>
+  <article>
+    {artikel.data.entwurf && <span class="entwurf-badge">Entwurf — noch nicht redigiert</span>}
+    <h1>{artikel.data.title}</h1>
+    <p class="meta">
+      Veröffentlicht am {datum(artikel.data.pubDate)}
+      {artikel.data.updatedDate && ` · Aktualisiert am ${datum(artikel.data.updatedDate)}`}
+    </p>
+
+    {artikel.data.affiliate && (
+      <div class="hinweis-box">
+        <strong>Transparenz:</strong> Dieser Artikel enthält Provisions-Links (mit
+        <span class="aff-mark">*</span> markiert). Buchst du darüber, erhalten wir eine Provision —
+        für dich ändert sich der Preis nicht. Unsere Einschätzungen beeinflusst das nicht:
+        Wir verlinken auch Kurse, für die wir nichts bekommen.
+      </div>
+    )}
+
+    <Content />
+
+    <div class="autor-box">
+      <div>
+        <strong>Über den Autor</strong>
+        Ich studiere Wirtschaftsinformatik und arbeite die Kurse, über die ich schreibe, selbst
+        durch — neben Vorlesungen, Klausuren und Praxisprojekten. Was hier steht, habe ich
+        ausprobiert, nicht abgeschrieben. <a href="/ueber">Mehr über diese Seite</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

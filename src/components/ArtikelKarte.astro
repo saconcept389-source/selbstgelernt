@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  artikel: CollectionEntry<'artikel'>;
+}
+
+const { artikel } = Astro.props;
+const kategorieLabel: Record<string, string> = {
+  lernpfad: 'Lernpfad',
+  kursvergleich: 'Kursvergleich',
+  ratgeber: 'Ratgeber',
+};
+---
+
+<li class="card">
+  <span class="kategorie-tag">{kategorieLabel[artikel.data.kategorie]}</span>
+  {artikel.data.entwurf && <span class="entwurf-badge">Entwurf</span>}
+  <a class="card-title" href={`/artikel/${artikel.id}`}>{artikel.data.title}</a>
+  <p>{artikel.data.description}</p>
+</li>
