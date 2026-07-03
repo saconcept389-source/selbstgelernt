@@ -4,7 +4,7 @@ description: "Python, JavaScript, Java oder C? Warum die Frage falsch gestellt i
 pubDate: 2026-07-03
 kategorie: ratgeber
 affiliate: false
-entwurf: true
+entwurf: false
 ---
 
 Die Frage ist der Klassiker in jedem Einsteiger-Forum — und die meisten Antworten sind

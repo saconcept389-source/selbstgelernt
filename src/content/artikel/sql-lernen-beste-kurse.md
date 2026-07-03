@@ -4,7 +4,7 @@ description: "SQL-Kurse gibt es hunderte — gut sind wenige. Fünf Kurse im Ver
 pubDate: 2026-07-03
 kategorie: kursvergleich
 affiliate: true
-entwurf: true
+entwurf: false
 ---
 
 SQL ist der Skill mit dem besten Aufwand-Nutzen-Verhältnis in der IT: In vier bis sechs Wochen

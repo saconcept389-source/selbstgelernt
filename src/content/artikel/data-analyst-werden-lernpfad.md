@@ -4,7 +4,7 @@ description: "Vom Nullpunkt zum ersten Data-Analyst-Job: welche Skills du wirkli
 pubDate: 2026-07-03
 kategorie: lernpfad
 affiliate: true
-entwurf: true
+entwurf: false
 ---
 
 „Werde Data Analyst in 12 Wochen" — solche Versprechen liest du überall. Die ehrliche Version:
