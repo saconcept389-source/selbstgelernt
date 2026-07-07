@@ -1,0 +1,4 @@
+Contact: mailto:info@sa-concept.de
+Expires: 2027-07-07T00:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://selbstgelernt.de/.well-known/security.txt
