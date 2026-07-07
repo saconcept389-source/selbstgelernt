@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Alles Gute zum Geburtstag, Edgar! · selbstgelernt.de</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<style>
+  :root {
+    --ground: #fbfcfb;
+    --panel: #f3f6f4;
+    --ink: #16211d;
+    --muted: #5c6b64;
+    --line: #e2e8e4;
+    --green: #0e7a5f;
+    --green-deep: #0a5c48;
+    --green-wash: #e7f2ee;
+    --spark: #c2701c;
+    --measure: 40rem;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.5rem; }
+  .full { max-width: 52rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* entrance */
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .rise { animation: rise 0.7s cubic-bezier(.2,.7,.2,1) both; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; }
+  .d3 { animation-delay: .25s; } .d4 { animation-delay: .35s; }
+  @media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
+
+  /* hero */
+  header.hero { padding: 4.5rem 0 2.5rem; }
+  .eyebrow {
+    font-size: .82rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--spark); margin: 0 0 1.4rem; display: flex; align-items: center; gap: .5rem;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--spark); }
+  h1 {
+    font-size: clamp(2.1rem, 6vw, 3.15rem); line-height: 1.08; letter-spacing: -.025em;
+    font-weight: 780; margin: 0 0 1.1rem; text-wrap: balance;
+  }
+  h1 .accent { color: var(--green-deep); }
+  .lede { font-size: 1.19rem; color: var(--muted); margin: 0 0 2rem; text-wrap: pretty; }
+  .lede strong { color: var(--ink); font-weight: 650; }
+
+  .livechip {
+    display: inline-flex; align-items: center; gap: .6rem; text-decoration: none;
+    background: var(--green); color: #fff; font-weight: 650; font-size: 1.02rem;
+    padding: .7rem 1.15rem; border-radius: 10px; letter-spacing: -.01em;
+    box-shadow: 0 1px 2px rgba(10,92,72,.25), 0 8px 22px -12px rgba(14,122,95,.6);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .livechip:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(10,92,72,.3), 0 12px 26px -12px rgba(14,122,95,.7); }
+  .livechip .pulse { width: 9px; height: 9px; border-radius: 50%; background: #8ff0cf; box-shadow: 0 0 0 0 rgba(143,240,207,.7); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(143,240,207,.6);} 70%{box-shadow:0 0 0 7px rgba(143,240,207,0);} 100%{box-shadow:0 0 0 0 rgba(143,240,207,0);} }
+  @media (prefers-reduced-motion: reduce){ .livechip .pulse{ animation:none; } }
+  .livechip .arr { opacity: .8; }
+
+  /* status strip */
+  .status {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    margin: 3rem auto 0;
+  }
+  .status .cell { background: var(--ground); padding: 1.25rem 1.35rem; }
+  .status .num { font-size: 1.7rem; font-weight: 760; letter-spacing: -.02em; color: var(--green-deep); font-variant-numeric: tabular-nums; }
+  .status .lbl { font-size: .82rem; color: var(--muted); margin-top: .15rem; }
+  @media (max-width: 560px){ .status{ grid-template-columns: 1fr; } }
+
+  /* sections */
+  section { padding: 3.2rem 0 0; }
+  h2 {
+    font-size: 1.42rem; letter-spacing: -.015em; font-weight: 720; margin: 0 0 .4rem;
+    text-wrap: balance;
+  }
+  h2 .n { color: var(--green); font-variant-numeric: tabular-nums; margin-right: .55rem; font-weight: 700; }
+  .sec-intro { color: var(--muted); margin: 0 0 1.5rem; }
+  p { margin: 0 0 1.1rem; }
+  a { color: var(--green-deep); }
+
+  .how { display: grid; gap: .9rem; }
+  .how .row { display: flex; gap: .9rem; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.15rem; }
+  .how .row b { display: block; margin-bottom: .15rem; letter-spacing: -.01em; }
+  .how .row p { margin: 0; color: var(--muted); font-size: .96rem; }
+  .how .ic { flex: none; width: 34px; height: 34px; border-radius: 9px; background: var(--green-wash); color: var(--green-deep); display: grid; place-items: center; font-weight: 800; font-size: 1.05rem; }
+
+  /* article grid */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+  @media (max-width: 560px){ .grid{ grid-template-columns: 1fr; } }
+  .art { display: block; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; background: var(--ground); transition: border-color .15s ease, transform .15s ease; }
+  .art:hover { border-color: var(--green); transform: translateY(-2px); }
+  .art .tag { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--green-deep); background: var(--green-wash); padding: .13rem .5rem; border-radius: 999px; display: inline-block; margin-bottom: .55rem; }
+  .art .t { font-weight: 640; line-height: 1.3; letter-spacing: -.01em; font-size: 1.0rem; }
+
+  /* cheat sheet */
+  .cheat { background: #0f1a16; border-radius: 14px; padding: 1.6rem 1.7rem; color: #d7e4de; }
+  .cheat .step { display: flex; gap: .85rem; align-items: baseline; margin-bottom: 1rem; }
+  .cheat .step:last-child { margin-bottom: 0; }
+  .cheat .k { flex: none; width: 1.5rem; color: #7fd3b7; font-weight: 700; font-variant-numeric: tabular-nums; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .cheat .txt { font-size: .95rem; }
+  .cheat code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: rgba(127,211,183,.14); color: #a7ead0; padding: .12em .45em; border-radius: 5px; font-size: .88em; }
+  .cheat .muted2 { color: #8fa39b; }
+
+  /* AI prompts */
+  .prompts { display: grid; gap: .9rem; }
+  .prompt { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--ground); }
+  .prompt .head { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .7rem .95rem; background: var(--panel); border-bottom: 1px solid var(--line); }
+  .prompt .head .name { font-weight: 640; font-size: .93rem; letter-spacing: -.01em; }
+  .prompt .head .name .badge { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--green-deep); background: var(--green-wash); padding: .1rem .45rem; border-radius: 999px; margin-left: .5rem; vertical-align: .05em; }
+  .copy-btn { flex: none; cursor: pointer; border: 1px solid var(--line); background: #fff; color: var(--green-deep); font: inherit; font-size: .82rem; font-weight: 650; padding: .32rem .7rem; border-radius: 7px; transition: background .15s ease, border-color .15s ease, color .15s ease; }
+  .copy-btn:hover { background: var(--green-wash); border-color: var(--green); }
+  .copy-btn.done { background: var(--green); color: #fff; border-color: var(--green); }
+  .copy-btn:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+  .prompt pre { margin: 0; padding: .95rem 1.05rem; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .82rem; line-height: 1.55; color: #223029; white-space: pre-wrap; word-break: break-word; max-height: 12.5rem; overflow-y: auto; }
+  .prompt-hint { color: var(--muted); font-size: .95rem; margin: 1.2rem 0 0; }
+  .try { margin-top: 1.2rem; background: var(--green-wash); border: 1px solid #cfe4db; border-radius: 12px; padding: 1rem 1.15rem; font-size: .96rem; }
+  .try b { color: var(--green-deep); }
+  .try a { font-weight: 650; }
+
+  /* Einkommens-Flywheel */
+  .flywheel { display: grid; gap: .7rem; counter-reset: step; }
+  .flywheel .pillar { display: flex; gap: .9rem; align-items: flex-start; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.15rem; background: var(--ground); }
+  .flywheel .pillar .step-n { flex: none; width: 30px; height: 30px; border-radius: 8px; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 750; font-size: .95rem; font-variant-numeric: tabular-nums; }
+  .flywheel .pillar b { display: block; margin-bottom: .12rem; letter-spacing: -.01em; }
+  .flywheel .pillar p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .honest { margin-top: 1.3rem; border-left: 3px solid var(--spark); background: #fbf4ea; border-radius: 0 10px 10px 0; padding: .85rem 1.1rem; font-size: .95rem; color: #6b5533; }
+  .honest b { color: #8a5a12; }
+
+  /* next steps */
+  .todo { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+  .todo li { display: flex; gap: .7rem; align-items: flex-start; }
+  .todo .box { flex: none; width: 18px; height: 18px; border: 2px solid var(--green); border-radius: 5px; margin-top: .28rem; }
+  .todo .who { font-size: .78rem; color: var(--muted); font-weight: 600; }
+
+  /* personal note */
+  .note { margin: 3.5rem auto 0; background: var(--green-wash); border-radius: 16px; padding: 2.2rem 2rem; border: 1px solid #cfe4db; }
+  .note .from { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--green-deep); font-weight: 700; margin: 0 0 1rem; }
+  .note p { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; font-size: 1.14rem; line-height: 1.7; color: #21322c; }
+  .note p:last-child { margin-bottom: 0; }
+
+  footer { text-align: center; color: var(--muted); font-size: .87rem; padding: 3.5rem 0 3rem; }
+  footer .heart { color: var(--spark); }
+
+  /* Geburtstags-Empfang */
+  .bday {
+    position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 1.5rem;
+    background: radial-gradient(130% 130% at 50% 0%, #0e7a5f 0%, #0a3d30 62%, #06241d 100%);
+    opacity: 1; transition: opacity .55s ease;
+  }
+  .bday.hide { opacity: 0; pointer-events: none; }
+  #confetti { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .bday-card { position: relative; text-align: center; max-width: 32rem; animation: pop .75s cubic-bezier(.2,.85,.25,1) both; }
+  @keyframes pop { 0% { opacity: 0; transform: translateY(18px) scale(.93); } 100% { opacity: 1; transform: none; } }
+  .bday-eyebrow { color: #ffd79a; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; margin: 0 0 1.1rem; }
+  .bday-title { color: #fff; font-size: clamp(1.85rem, 5.6vw, 2.75rem); line-height: 1.1; letter-spacing: -.025em; font-weight: 780; margin: 0 0 1.15rem; text-wrap: balance; }
+  .bday-joke { color: #cfe8dd; font-size: 1.1rem; line-height: 1.62; margin: 0 0 2rem; text-wrap: pretty; }
+  .bday-go { cursor: pointer; border: none; font: inherit; font-weight: 720; font-size: 1.03rem; color: #0a3d30; background: #ffd79a; padding: .8rem 1.6rem; border-radius: 11px; box-shadow: 0 12px 34px -12px rgba(255,215,154,.7); transition: transform .15s ease, box-shadow .15s ease; }
+  .bday-go:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(255,215,154,.85); }
+  .bday-go:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .bday-hint { color: rgba(255,255,255,.55); font-size: .84rem; margin: 1.05rem 0 0; }
+  @media (prefers-reduced-motion: reduce) { .bday-card { animation: none; } .bday { transition: none; } }
+</style>
+
+<div class="bday" id="bday" role="dialog" aria-label="Geburtstagsgruß">
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="bday-card">
+    <p class="bday-eyebrow">Für Edgar · heute</p>
+    <h1 class="bday-title">Alles Gute zum Geburtstag, Edgar! 🎉</h1>
+    <p class="bday-joke">Andere bekommen zum Geburtstag Socken. Du bekommst eine Website, die im Schlaf Geld verdient — und garantiert nie in der Wäsche verschwindet. 🎂</p>
+    <button class="bday-go" type="button" id="bday-go">Geschenk auspacken 🎁</button>
+    <p class="bday-hint">… oder einfach irgendwohin tippen</p>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow rise d1"><span class="dot"></span>Alles Gute zum Geburtstag 🎉</p>
+    <h1 class="rise d2">Ich hab dir keine Sache gekauft.<br><span class="accent">Ich hab dir eine Maschine gebaut.</span></h1>
+    <p class="lede rise d3">Deine eigene Website ist <strong>ab heute online</strong>: ehrliche Kursvergleiche und Lernpfade rund um IT-Skills — geschrieben aus genau deiner Perspektive als Wirtschaftsinformatik-Student. Sie läuft von allein, kostet fast nichts und verdient über Provisionen mit, während du studierst.</p>
+    <a class="livechip rise d4" href="https://selbstgelernt.de" target="_blank" rel="noopener">
+      <span class="pulse"></span> selbstgelernt.de ist live <span class="arr">→</span>
+    </a>
+  </div>
+</header>
+
+<div class="full">
+  <div class="status rise d4">
+    <div class="cell"><div class="num">8</div><div class="lbl">Artikel online, ab Tag&nbsp;1</div></div>
+    <div class="cell"><div class="num">0&nbsp;€</div><div class="lbl">Hosting — läuft auf GitHub Pages</div></div>
+    <div class="cell"><div class="num">100%</div><div class="lbl">dir gehörend, S&amp;A trägt das Impressum</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Was das hier eigentlich ist</h2>
+    <p class="sec-intro">Kurz erklärt, bevor du klickst — damit du das Geschenk verstehst, nicht nur siehst.</p>
+    <div class="how">
+      <div class="row"><div class="ic">1</div><div><b>Eine echte Affiliate-Website</b><p>Menschen googeln „SQL lernen" oder „welcher Python-Kurs" — finden deinen Artikel, klicken auf einen Kurs-Link, buchen. Du bekommst eine Provision. Für den Leser ändert sich der Preis nicht.</p></div></div>
+      <div class="row"><div class="ic">2</div><div><b>Dein unfairer Vorteil</b><p>Du lernst SQL, Python, Datenanalyse gerade selbst. „Ich hab diesen Kurs im Studium durchgearbeitet" ist genau das, was Google und Leser von einer Empfehlungsseite hören wollen — und was kein KI-Textgenerator glaubwürdig kann.</p></div></div>
+      <div class="row"><div class="ic">3</div><div><b>Wartungsarm gebaut</b><p>Keine Datenbank, kein WordPress-Update-Zirkus, keine Cookies, kein Cookie-Banner. Reiner statischer Code. Du schreibst Text, der Rest passiert automatisch.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="full">
+    <div class="wrap" style="padding-left:0;padding-right:0;max-width:40rem;margin:0 auto;">
+      <h2>Die 8 Artikel, die schon live sind</h2>
+      <p class="sec-intro">Ein zusammenhängender Themen-Cluster — nicht acht zufällige Texte. Alle verlinken untereinander, alle sind indexierbar.</p>
+    </div>
+    <div class="grid">
+      <a class="art" href="https://selbstgelernt.de/artikel/sql-lernen-beste-kurse" target="_blank" rel="noopener"><span class="tag">Kursvergleich</span><div class="t">SQL lernen: Die 5 besten Onlinekurse im ehrlichen Vergleich</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/python-lernen-beste-kurse" target="_blank" rel="noopener"><span class="tag">Kursvergleich</span><div class="t">Python lernen: Die 5 besten Kurse für Einsteiger</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/it-zertifikate-lohnen-sich" target="_blank" rel="noopener"><span class="tag">Kursvergleich</span><div class="t">IT-Zertifikate: Welche sich wirklich lohnen — und welche nicht</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/data-analyst-werden-lernpfad" target="_blank" rel="noopener"><span class="tag">Lernpfad</span><div class="t">Data Analyst werden: Der realistische Lernpfad für Einsteiger</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/power-bi-lernen-pl-300" target="_blank" rel="noopener"><span class="tag">Lernpfad</span><div class="t">Power BI lernen: Der kostenlose Weg zum gefragtesten BI-Tool</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/excel-lernen-kostenlos-oder-kurs" target="_blank" rel="noopener"><span class="tag">Ratgeber</span><div class="t">Excel lernen: Was kostenlos geht — und wann sich ein Kurs lohnt</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/it-ohne-studium" target="_blank" rel="noopener"><span class="tag">Ratgeber</span><div class="t">In die IT ohne Studium: Was 2026 wirklich zählt</div></a>
+      <a class="art" href="https://selbstgelernt.de/artikel/welche-programmiersprache-zuerst" target="_blank" rel="noopener"><span class="tag">Ratgeber</span><div class="t">Welche Programmiersprache zuerst lernen? Eine ehrliche Antwort</div></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>So schreibst du einen neuen Artikel</h2>
+    <p class="sec-intro">Der ganze Ablauf — mehr ist es wirklich nicht. Kein Baukasten, kein Login-Dschungel.</p>
+    <div class="cheat">
+      <div class="step"><span class="k">01</span><span class="txt">Neue Datei anlegen: <code>src/content/artikel/mein-thema.md</code> — der Dateiname wird die Web-Adresse.</span></div>
+      <div class="step"><span class="k">02</span><span class="txt">Oben ein paar Zeilen Titel &amp; Beschreibung, darunter dein Text in ganz normalem Markdown.</span></div>
+      <div class="step"><span class="k">03</span><span class="txt">Kurs-Links einfach als normalen Link schreiben — die Provisions-Kennzeichnung setzt die Seite <span class="muted2">automatisch</span>.</span></div>
+      <div class="step"><span class="k">04</span><span class="txt"><code>git push</code> — und ein, zwei Minuten später steht der Artikel live im Netz.</span></div>
+    </div>
+    <p style="margin-top:1rem;color:var(--muted);font-size:.95rem;">Die ausführliche Anleitung liegt als <code style="font-size:.85em;background:var(--panel);padding:.1em .4em;border-radius:4px;">README.md</code> im Projekt — mit allem, was du je brauchst.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>KI-Prompts, die auf deine Seite abgestimmt sind</h2>
+    <p class="sec-intro">Lass dir von Claude oder ChatGPT beim Schreiben helfen — mit Prompts, in denen Nische, Stimme und Technik deiner Seite schon drinstecken. Kopier zuerst den Kontext-Block, dann den Prompt für deine Aufgabe. Gegenlesen nicht vergessen: Die KI schreibt den Entwurf, deine echte Erfahrung macht ihn wertvoll.</p>
+    <div class="prompts">
+
+      <div class="prompt">
+        <div class="head"><span class="name">Kontext-Block<span class="badge">immer zuerst</span></span><button class="copy-btn" type="button">Kopieren</button></div>
+        <pre>Du hilfst mir bei selbstgelernt.de, einer deutschen Affiliate-Website übers Lernen von IT-Skills (SQL, Python, Datenanalyse, Excel, Power BI, IT-Zertifikate).
+
+Autor bin ich, Edgar — Wirtschaftsinformatik-Student, der die Kurse selbst durcharbeitet. Zielgruppe: Einsteiger und Studierende, die eine ehrliche Empfehlung suchen.
+
+Stimme und Regeln (immer einhalten):
+- Deutsch, den Leser duzen.
+- Ehrlich und nützlich, kein Werbe-Sprech. Nenne immer auch die kostenlose Alternative.
+- Sag klar, für wen ein Kurs NICHT geeignet ist.
+- Schreib aus erster Hand ("ich habe … im Studium durchgearbeitet"), aber erfinde nichts.
+- Keine Keyword-Wiederholung, keine Textwüste. Nutze konkrete Zahlen: Preise, Dauer, Aufwand.
+- Affiliate-Links als normale Markdown-Links (Kennzeichnung passiert automatisch).
+- Zwischenüberschriften (##), gern eine kurze Vergleichstabelle, ein knappes Fazit.</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="head"><span class="name">Neuen Kursvergleich schreiben<span class="badge">Geld-Artikel</span></span><button class="copy-btn" type="button">Kopieren</button></div>
+        <pre>Schreib mir einen vollständigen Kursvergleich-Artikel zum Thema: &lt;THEMA, z. B. "Tableau lernen"&gt;.
+
+Aufbau:
+- Kurze Einleitung mit einer konkreten Zahl/Fakt.
+- Vergleichstabelle mit 4–5 Optionen (Kurs | Für wen | Preis | Urteil), darunter mindestens eine kostenlose Option.
+- Pro Top-Kurs ein Absatz mit "Stark:", "Schwach:" und "Nicht geeignet für:".
+- Ein "Bevor du zahlst"-Abschnitt mit der besten Gratis-Option.
+- Fazit mit klarer Empfehlung nach Ziel.
+
+Gib mir am Ende den Frontmatter-Block mit title (max ~60 Zeichen), description (max 160 Zeichen), kategorie: kursvergleich, affiliate: true, entwurf: true.</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="head"><span class="name">Themen-Ideen aus einem Kurs finden</span><button class="copy-btn" type="button">Kopieren</button></div>
+        <pre>Ich habe gerade dieses Thema bearbeitet: &lt;KURS/THEMA&gt;.
+Gib mir 10 konkrete Artikel-Ideen für selbstgelernt.de. Pro Idee: der wahrscheinliche Suchbegriff (wie Leute googeln), die passende kategorie (kursvergleich/lernpfad/ratgeber) und in einem Satz der Blickwinkel, den nur ich als Student aus erster Hand liefern kann. Sortiere nach realistischer Einsteiger-Chance (wenig umkämpft zuerst).</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="head"><span class="name">Ehrlichkeits-Check vor dem Veröffentlichen<span class="badge">Redigat</span></span><button class="copy-btn" type="button">Kopieren</button></div>
+        <pre>Lies meinen Entwurf kritisch gegen: &lt;TEXT&gt;.
+Prüfe: Klingt etwas nach Werbe-Sprech statt echter Erfahrung? Fehlt die kostenlose Alternative? Sage ich klar, für wen es NICHT taugt? Gibt es leere Floskeln oder Keyword-Wiederholung? Stimmen Preise/Zahlen? Markiere die Stellen und schlag konkrete Umformulierungen im Stil der Seite vor.</pre>
+      </div>
+
+    </div>
+    <p class="prompt-hint">Die vollständige Sammlung mit 7 Prompts (Lernpfad, Ratgeber, Titel-Optimierung, interne Verlinkung …) liegt als <code style="font-size:.85em;background:var(--panel);padding:.1em .4em;border-radius:4px;">PROMPTS.md</code> im Projekt.</p>
+    <div class="try">
+      <b>Noch nie mit Claude gearbeitet?</b> Genau dafür sind die Kopier-Buttons da: Öffne
+      <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, leg dir kostenlos ein
+      Konto an, füg einen Prompt von oben ein — und schau Claude beim Schreiben zu. Der kostenlose
+      Tarif reicht locker zum Ausprobieren und für die ersten Artikel. Wenn du mehr willst
+      (die Seite selbst bedienen, deployen), zeigt Andreas dir Claude Code.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Wie daraus ein Einkommen wird, von dem man leben kann</h2>
+    <p class="sec-intro">Der Plan dahinter — kein Kanal allein trägt, sondern ein Schwungrad aus fünf Teilen, in dem jedes das nächste antreibt. Du fängst mit Teil 1 an; der Rest kommt Stück für Stück.</p>
+    <div class="flywheel">
+      <div class="pillar"><span class="step-n">1</span><div><b>Content-Motor</b><p>Von 8 auf 50, dann 150 Artikel — mit den KI-Prompts als Hebel. Jeder Kurs, den du lernst, wird ein Artikel. Das ist der Traffic, den alles andere braucht.</p></div></div>
+      <div class="pillar"><span class="step-n">2</span><div><b>Eigene E-Mail-Liste</b><p>Ein kostenloses PDF („Fahrplan zum Data Analyst") gegen E-Mail-Adresse. So gehört dir dein Publikum — unabhängig von Google.</p></div></div>
+      <div class="pillar"><span class="step-n">3</span><div><b>Eigenes Produkt</b><p>Dein Wissen als bezahlter Lernpfad oder E-Book. Fast 100 % Marge statt Affiliate-Provision — meist genau das, was über die „leben können"-Schwelle hebt.</p></div></div>
+      <div class="pillar"><span class="step-n">4</span><div><b>Kleine Tools</b><p>Ein „Welcher Kurs passt zu dir?"-Quiz oder ein Lernpfad-Generator. Zieht Besucher und E-Mails an — Andreas baut die Technik.</p></div></div>
+      <div class="pillar"><span class="step-n">5</span><div><b>Vervielfältigen</b><p>Wenn die Maschine für eine Seite läuft, ist die zweite fast geschenkt. Mehrere Seiten zusammen sind der realistische Weg zum Vollzeit-Einkommen.</p></div></div>
+    </div>
+    <div class="honest">
+      <b>Ehrlich bleibt ehrlich:</b> Das dauert 1–2 Jahre konsequenter Arbeit, und garantiert ist es nie. Die ersten Monate passiert fast nichts sichtbares — das ist normal, kein Scheitern. Der einzige echte Unterschied zwischen „läuft" und „läuft nicht" ist Dranbleiben über Zeit. Der vollständige Fahrplan mit Phasen und Meilensteinen liegt bei Andreas im Projekt-Vault.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Was als Nächstes dran ist</h2>
+    <p class="sec-intro">Das Fundament steht. Diese Schritte machen aus „online" ein „verdient Geld" — kein Stress, in deinem Tempo.</p>
+    <ul class="todo">
+      <li><span class="box"></span><div><b>Die Über-Seite zu deiner machen</b> <span class="who">· du</span><br><span style="color:var(--muted);font-size:.95rem;">Dein Vorname, ein Foto, zwei Sätze über dich. Das ist der wichtigste Vertrauensbaustein für Google und Leser.</span></div></li>
+      <li><span class="box"></span><div><b>Partnerprogramme beantragen</b> <span class="who">· zusammen</span><br><span style="color:var(--muted);font-size:.95rem;">Coursera &amp; DataCamp (über Impact), Udemy (über Rakuten). Danach fließen die Provisionen — die Technik dafür liegt schon bereit.</span></div></li>
+      <li><span class="box"></span><div><b>Bei Google anmelden</b> <span class="who">· zusammen</span><br><span style="color:var(--muted);font-size:.95rem;">Search Console einrichten, Sitemap einreichen. Dann fängt Google an, dich zu finden — und wir sehen, welcher Artikel zieht.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<div class="full">
+  <div class="note">
+    <p class="from">Für Edgar</p>
+    <p>Hey Edgar — ein Gutschein wäre einfacher gewesen. Aber ich wollte dir etwas schenken, das dir gehört und mit dir wächst, statt etwas, das in zwei Wochen aufgebraucht ist.</p>
+    <p>Das hier ist kein fertiges Ding zum Anschauen, sondern ein Anfang zum Weitermachen. Jeder Kurs, den du sowieso durcharbeitest, kann ein Artikel werden. Und irgendwann, während du in der Vorlesung sitzt, verdient die Seite im Hintergrund ein paar Euro. Kein Reichtum — aber deins, selbst aufgebaut.</p>
+    <p>Damit du nicht nur die Maschine hast, sondern auch verstehst, wie sie tickt, bekommst du von mir noch ein Buch über Affiliate-Marketing dazu. Den Rest — alles Technische — machen wir zusammen. Du musst nur schreiben, was du ohnehin gerade lernst.</p>
+    <p style="margin-top:1.4rem;">Happy Birthday. 🎂</p>
+  </div>
+</div>
+
+<footer>
+  Gebaut mit <span class="heart">♥</span> · selbstgelernt.de · ein Projekt der S&amp;A Concept UG
+</footer>
+
+<script>
+  /* Geburtstags-Empfang: Konfetti + Gruß, einmal pro Session, klick zum Auspacken */
+  (function () {
+    var overlay = document.getElementById('bday');
+    if (!overlay) return;
+    try { if (sessionStorage.getItem('bdaySeen')) { overlay.remove(); return; } } catch (e) {}
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canvas = document.getElementById('confetti');
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, parts = [], running = true;
+
+    function size() { W = canvas.width = canvas.offsetWidth * dpr; H = canvas.height = canvas.offsetHeight * dpr; }
+    size();
+    window.addEventListener('resize', size);
+
+    var colors = ['#7fe0bf', '#ffd79a', '#e8b23a', '#e0567a', '#ffffff', '#3fbf93'];
+    function burst(n) {
+      for (var i = 0; i < n; i++) {
+        parts.push({
+          x: Math.random() * W,
+          y: -20 * dpr - Math.random() * H * 0.35,
+          vx: (Math.random() - 0.5) * 3.2 * dpr,
+          vy: (2 + Math.random() * 4) * dpr,
+          w: (6 + Math.random() * 6) * dpr,
+          h: (8 + Math.random() * 9) * dpr,
+          rot: Math.random() * Math.PI,
+          vr: (Math.random() - 0.5) * 0.32,
+          c: colors[(Math.random() * colors.length) | 0]
+        });
+      }
+    }
+
+    function frame() {
+      if (!running) return;
+      ctx.clearRect(0, 0, W, H);
+      for (var i = parts.length - 1; i >= 0; i--) {
+        var p = parts[i];
+        p.vy += 0.035 * dpr; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+        if (p.y > H + 40 * dpr) parts.splice(i, 1);
+      }
+      if (parts.length > 0) { requestAnimationFrame(frame); } else { running = false; }
+    }
+
+    if (!reduce) { burst(150); setTimeout(function () { burst(70); }, 550); requestAnimationFrame(frame); }
+
+    function dismiss() {
+      try { sessionStorage.setItem('bdaySeen', '1'); } catch (e) {}
+      running = false;
+      overlay.classList.add('hide');
+      setTimeout(function () { if (overlay.parentNode) overlay.parentNode.removeChild(overlay); }, 600);
+    }
+    overlay.addEventListener('click', dismiss);
+    var go = document.getElementById('bday-go');
+    if (go) go.addEventListener('click', function (e) { e.stopPropagation(); dismiss(); });
+  })();
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var pre = btn.closest('.prompt').querySelector('pre');
+      var text = pre.innerText;
+      var done = function () {
+        btn.textContent = 'Kopiert!';
+        btn.classList.add('done');
+        setTimeout(function () { btn.textContent = 'Kopieren'; btn.classList.remove('done'); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    });
+  });
+  function fallback(text, done) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+</script>
+
+</body>
+</html>
