@@ -34,6 +34,13 @@ npm run build      # erzeugt die fertige Website in dist/ (ohne Entwürfe!)
 3. Darunter normalen Markdown-Text schreiben.
 4. Zum Veröffentlichen: `entwurf: true` entfernen (oder auf `false`) und neu deployen.
 
+## KI beim Schreiben nutzen
+
+In [`PROMPTS.md`](PROMPTS.md) liegen 7 fertige Prompts für Claude/ChatGPT, abgestimmt auf
+Nische, Stimme und Technik dieser Seite (neuer Artikel, Themen-Ideen, Titel-Optimierung,
+interne Verlinkung, Ehrlichkeits-Check). Immer zuerst den Kontext-Block kopieren, dann den
+Task-Prompt. Ergebnis selbst gegenlesen — die KI liefert den Entwurf, deine Erfahrung den Wert.
+
 ## Affiliate-Links — so funktioniert das hier
 
 **Einfach normale Links schreiben**, z. B. `[Kursname](https://www.datacamp.com/...)`.
